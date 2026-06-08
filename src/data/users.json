@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1780316950146",
+    "name": "Luis Martinho oliveira Lopes",
+    "email": "luismartinho6@gmail.com",
+    "password": "$2b$10$LxA1FDYajQ/vMpF6MAkRkelS3u5diEOtLo4X5SUhaQAYKZcJB92Hu",
+    "createdAt": "2026-06-01T12:29:10.146Z"
+  },
+  {
+    "id": "1780927042740",
+    "name": "Joao",
+    "email": "joao@hotmail.com",
+    "password": "$2b$10$w4sMiPOFmeRdAyjE3anFgurls6WdRv2FrKv5QwpmKejmYAKMb6jEO",
+    "createdAt": "2026-06-08T13:57:22.740Z"
+  }
+]

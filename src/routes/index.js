@@ -100,6 +100,65 @@ router.get("/", (_req, res) => {
 
 /**
  * @swagger
+ * /api/auth/forgot-password:
+ *   post:
+ *     summary: Solicitar recuperação de password (gera código de verificação)
+ *     tags: [Autenticação]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 example: joao@email.com
+ *     responses:
+ *       200:
+ *         description: Código gerado com sucesso (retorna o código no JSON para simulação)
+ *       400:
+ *         description: Email em falta ou não registado
+ */
+
+/**
+ * @swagger
+ * /api/auth/reset-password:
+ *   post:
+ *     summary: Redefinir a password usando o código de verificação
+ *     tags: [Autenticação]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *               - code
+ *               - newPassword
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 example: joao@email.com
+ *               code:
+ *                 type: string
+ *                 example: "123456"
+ *               newPassword:
+ *                 type: string
+ *                 minimum: 6
+ *                 example: nova_password123
+ *     responses:
+ *       200:
+ *         description: Palavra-passe redefinida com sucesso
+ *       400:
+ *         description: Campos inválidos, código incorreto/expirado ou erro ao atualizar
+ */
+
+/**
+ * @swagger
  * /api/watchlist:
  *   get:
  *     summary: Obter a watchlist do utilizador autenticado

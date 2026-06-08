@@ -44,9 +44,24 @@ const validatePassword = async (password, hashedPassword) => {
   return bcrypt.compare(password, hashedPassword);
 };
 
+const updatePasswordByEmail = async (email, newPassword) => {
+  const users = readData(DB_NAME);
+  const userIndex = users.findIndex(u => u.email.toLowerCase() === email.toLowerCase());
+  
+  if (userIndex === -1) return false;
+
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+  users[userIndex].password = hashedPassword;
+  writeData(DB_NAME, users);
+  return true;
+};
+
 module.exports = {
   findByEmail,
   findById,
   create,
-  validatePassword
+  validatePassword,
+  updatePasswordByEmail
 };

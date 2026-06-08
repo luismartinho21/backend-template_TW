@@ -1,0 +1,90 @@
+[
+  {
+    "id": "1780317396743",
+    "userId": "1780316950146",
+    "coinId": 1,
+    "coinSymbol": "BTC",
+    "coinName": "Bitcoin",
+    "addedAt": "2026-06-01T12:36:36.743Z"
+  },
+  {
+    "id": "1780317403537",
+    "userId": "1780316950146",
+    "coinId": 512,
+    "coinSymbol": "XLM",
+    "coinName": "Stellar",
+    "addedAt": "2026-06-01T12:36:43.537Z"
+  },
+  {
+    "id": "1780317410605",
+    "userId": "1780316950146",
+    "coinId": 1027,
+    "coinSymbol": "ETH",
+    "coinName": "Ethereum",
+    "addedAt": "2026-06-01T12:36:50.605Z"
+  },
+  {
+    "id": "1780317418919",
+    "userId": "1780316950146",
+    "coinId": 2010,
+    "coinSymbol": "ADA",
+    "coinName": "Cardano",
+    "addedAt": "2026-06-01T12:36:58.919Z"
+  },
+  {
+    "id": "1780317425374",
+    "userId": "1780316950146",
+    "coinId": 52,
+    "coinSymbol": "XRP",
+    "coinName": "XRP",
+    "addedAt": "2026-06-01T12:37:05.374Z"
+  },
+  {
+    "id": "1780317431647",
+    "userId": "1780316950146",
+    "coinId": 5426,
+    "coinSymbol": "SOL",
+    "coinName": "Solana",
+    "addedAt": "2026-06-01T12:37:11.647Z"
+  },
+  {
+    "id": "1780317436669",
+    "userId": "1780316950146",
+    "coinId": 1975,
+    "coinSymbol": "LINK",
+    "coinName": "Chainlink",
+    "addedAt": "2026-06-01T12:37:16.669Z"
+  },
+  {
+    "id": "1780317441121",
+    "userId": "1780316950146",
+    "coinId": 74,
+    "coinSymbol": "DOGE",
+    "coinName": "Dogecoin",
+    "addedAt": "2026-06-01T12:37:21.121Z"
+  },
+  {
+    "id": "1780927057732",
+    "userId": "1780927042740",
+    "coinId": 1,
+    "coinSymbol": "BTC",
+    "coinName": "Bitcoin",
+    "addedAt": "2026-06-08T13:57:37.732Z"
+  },
+  {
+    "id": "1780927067140",
+    "userId": "1780927042740",
+    "coinId": 52,
+    "coinSymbol": "XRP",
+    "coinName": "XRP",
+    "addedAt": "2026-06-08T13:57:47.140Z"
+  },
+  {
+    "id": "1780927071561",
+    "userId": "1780927042740",
+    "coinId": 1839,
+    "coinSymbol": "BNB",
+    "coinName": "BNB",
+    "addedAt": "2026-06-08T13:57:51.562Z"
+  }
+]

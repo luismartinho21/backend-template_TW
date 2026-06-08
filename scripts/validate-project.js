@@ -214,6 +214,7 @@ const runNpmScript = (scriptName) => {
   const result = spawnSync(npm, ["run", scriptName], {
     cwd: projectRoot,
     encoding: "utf8",
+    shell: true,
   });
   return {
     status: result.status === 0 ? "pass" : "fail",

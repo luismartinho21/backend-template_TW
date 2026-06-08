@@ -75,3 +75,72 @@ exports.login = async (req, res, next) => {
     next(error);
   }
 };
+
+// Mapa em memória para armazenar os códigos de recuperação temporários
+const recoveryCodes = new Map();
+
+exports.forgotPassword = async (req, res, next) => {
+  try {
+    const { email } = req.body;
+
+    if (!email) {
+      return res.status(400).json({ message: 'O endereço de email é obrigatório.' });
+    }
+
+    const user = User.findByEmail(email);
+    if (!user) {
+      return res.status(400).json({ message: 'Este endereço de email não está registado.' });
+    }
+
+    // Gera um código de 6 dígitos
+    const code = Math.floor(100000 + Math.random() * 900000).toString();
+    
+    // Guarda na memória associado ao email
+    recoveryCodes.set(email.toLowerCase(), code);
+
+    // Como é uma simulação (sem SMTP real), devolvemos o código na resposta
+    // para a interface frontend o poder ler e mostrar num popup explicativo!
+    res.json({
+      message: 'Código de verificação gerado com sucesso.',
+      code,
+      email
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+exports.resetPassword = async (req, res, next) => {
+  try {
+    const { email, code, newPassword } = req.body;
+
+    if (!email || !code || !newPassword) {
+      return res.status(400).json({ message: 'Todos os campos (email, código, nova password) são obrigatórios.' });
+    }
+
+    if (newPassword.length < 6) {
+      return res.status(400).json({ message: 'A nova palavra-passe deve ter pelo menos 6 caracteres.' });
+    }
+
+    const savedCode = recoveryCodes.get(email.toLowerCase());
+
+    if (!savedCode || savedCode !== code.trim()) {
+      return res.status(400).json({ message: 'Código de verificação inválido ou expirado.' });
+    }
+
+    // Atualiza a password
+    const success = await User.updatePasswordByEmail(email, newPassword);
+    if (!success) {
+      return res.status(400).json({ message: 'Erro ao atualizar a palavra-passe.' });
+    }
+
+    // Remove o código da memória
+    recoveryCodes.delete(email.toLowerCase());
+
+    res.json({
+      message: 'Palavra-passe redefinida com sucesso. Já podes iniciar sessão!'
+    });
+  } catch (error) {
+    next(error);
+  }
+};
