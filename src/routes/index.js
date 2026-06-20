@@ -232,4 +232,47 @@ router.get("/", (_req, res) => {
 router.use("/auth", authRoutes);
 router.use("/watchlist", watchlistRoutes);
 
+/**
+ * @swagger
+ * /api/crypto/listings:
+ *   get:
+ *     summary: Obter listagem de criptomoedas da CoinMarketCap (Proxy)
+ *     tags: [Mercado]
+ *     responses:
+ *       200:
+ *         description: Dados obtidos com sucesso
+ *       500:
+ *         description: Erro na comunicação com a API externa
+ */
+router.get("/crypto/listings", async (req, res, next) => {
+  try {
+    const apiKey = process.env.CMC_API_KEY;
+    if (!apiKey) {
+      return res.status(500).json({ error: "Chave da API CoinMarketCap não configurada no servidor." });
+    }
+
+    const response = await fetch("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=200&convert=EUR", {
+      method: "GET",
+      headers: {
+        "X-CMC_PRO_API_KEY": apiKey,
+        "Accept": "application/json"
+      }
+    });
+
+    if (!response.ok) {
+      const errText = await response.text();
+      return res.status(response.status).json({
+        error: "Erro ao comunicar com a CoinMarketCap",
+        details: errText
+      });
+    }
+
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;
+
