@@ -2,9 +2,7 @@
 
 ## Group Members
 
-- Student 1: Luis M.
-- Student 2: (Colega de Grupo)
-- Student 3 (if applicable):
+- Student 1: Luis Martinho Nº25361
 
 ## Project Theme
 
@@ -16,9 +14,9 @@ TcriptoW - Plataforma Visual de Acompanhamento de Criptomoedas com Watchlist Per
 - API link: https://coinmarketcap.com/api/
 - Requires API key? Yes
 
-## Frontend Repository
+## Backend Repository
 
-- Link: TcriptoW Frontend
+- Link:[TcriptoW Backend](https://github.com/luismartinho21/backend-template_TW.git)
 
 ## Entities
 
