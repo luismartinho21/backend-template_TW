@@ -86,5 +86,37 @@
     "coinSymbol": "BNB",
     "coinName": "BNB",
     "addedAt": "2026-06-08T13:57:51.562Z"
+  },
+  {
+    "id": "1782065715519",
+    "userId": "1782065709734",
+    "coinId": 5426,
+    "coinSymbol": "SOL",
+    "coinName": "Solana",
+    "addedAt": "2026-06-21T18:15:15.519Z"
+  },
+  {
+    "id": "1782065716937",
+    "userId": "1782065709734",
+    "coinId": 3408,
+    "coinSymbol": "USDC",
+    "coinName": "USDC",
+    "addedAt": "2026-06-21T18:15:16.937Z"
+  },
+  {
+    "id": "1782065755752",
+    "userId": "1782065709734",
+    "coinId": 32196,
+    "coinSymbol": "HYPE",
+    "coinName": "Hyperliquid",
+    "addedAt": "2026-06-21T18:15:55.752Z"
+  },
+  {
+    "id": "1782065758443",
+    "userId": "1782065709734",
+    "coinId": 1,
+    "coinSymbol": "BTC",
+    "coinName": "Bitcoin",
+    "addedAt": "2026-06-21T18:15:58.443Z"
   }
 ]

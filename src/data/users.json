@@ -5,5 +5,12 @@
     "email": "luismartinho6@gmail.com",
     "password": "$2b$10$ZhnCmVKWFSY6G/MZ9wmoTOrxQxixEfwXMvuhE0Tg9VLhYwsWTEo9i",
     "createdAt": "2026-06-01T12:29:10.146Z"
+  },
+  {
+    "id": "1782065709734",
+    "name": "luis",
+    "email": "luisls@ipvc.pt",
+    "password": "$2b$10$k7zF.4H2CYr0GwAlmFxIJOkixhNyBmWlSWlW9XRDLSvW6aJeKQmC6",
+    "createdAt": "2026-06-21T18:15:09.734Z"
   }
 ]
